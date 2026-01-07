@@ -7,6 +7,8 @@ export default {
   dialect: "postgresql",
   dbCredentials: {
     url: env.DATABASE_URL,
+    ssl: "require",
   },
-  tablesFilter: ["app-center_*"],
+  schemaFilter: [env.DATABASE_SCHEMA],
+  casing: "camelCase",
 } satisfies Config;
